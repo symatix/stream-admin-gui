@@ -151,11 +151,7 @@ class Overview extends Component {
 
     renderLoading(){
         if(this.props.currentState < 1){
-            return(
-                <Grid item xs={12}>
-                    <Loading />
-                </Grid>
-            )
+            return <Loading />
         }
     }
 
@@ -165,13 +161,15 @@ class Overview extends Component {
                 container
                 justify="center"
                 spacing={24}>
+                <Grid item xs={12}>
+                    {this.renderLoading()}
+                </Grid>
                 <Grid item xs={12} sm={12} md={7}>
                     {this.renderBarChart()}
                 </Grid>
                 <Grid item xs={12} md={5}>
                     {this.renderTable()}
                 </Grid>
-                {this.renderLoading()}
                 <Grid item xs={12} md={7}>
                     {this.renderPieChart()}
                 </Grid>

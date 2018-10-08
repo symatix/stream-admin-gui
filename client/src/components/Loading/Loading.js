@@ -3,8 +3,6 @@ import React from 'react';
 const style = {
     container:{
         position:"relative",
-        width: "100%",
-        height: "100%",
         textAlign: "center"
     },
     img: {
@@ -12,7 +10,7 @@ const style = {
         marginTop:"200px",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        zIndex: 1000
+        zIndex: 10000
     }
 }
 
