@@ -57,8 +57,8 @@ class FullWidthTabs extends React.Component {
             centered
           >
             <Tab label="Stations" />
-            <Tab label="Songs" />
-            <Tab label="Listeners" />
+            <Tab label="Playlists" />
+            <Tab label="Comparisons" />
           </Tabs>
         </AppBar>
         <SwipeableViews 

@@ -1,9 +1,9 @@
-import { SET_ACTIVE_STATION } from '../constants';
+import { GET_SONG_LIST_FOR_STATION } from '../constants';
 
 export default function (state = {}, action) {
 
 	switch (action.type) {
-	case SET_ACTIVE_STATION:
+	case GET_SONG_LIST_FOR_STATION:
         return action.payload;
         
 	default:

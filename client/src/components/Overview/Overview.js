@@ -19,7 +19,10 @@ const styles = theme => ({
         overflowX: 'auto',
     },
     table: {
-        minWidth: 700,
+        minWidth: 500,
+    },
+    loading: {
+        height: "450px"
     },
     alert: {
         color: "darkred"
@@ -150,8 +153,13 @@ class Overview extends Component {
     }
 
     renderLoading(){
-        if(this.props.currentState < 1){
-            return <Loading />
+        const { currentState, classes } = this.props;
+        if(currentState < 1){
+            return (
+              <Grid item xs={12} className={classes.loading}>
+                <Loading />
+              </Grid>
+            )
         }
     }
 
@@ -161,17 +169,15 @@ class Overview extends Component {
                 container
                 justify="center"
                 spacing={24}>
-                <Grid item xs={12}>
-                    {this.renderLoading()}
+                {this.renderLoading()}
+                <Grid item xs={12} md={6}>
+                    {this.renderTable()}
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    {this.renderPieChart()}
                 </Grid>
                 <Grid item xs={12} sm={12} md={7}>
                     {this.renderBarChart()}
-                </Grid>
-                <Grid item xs={12} md={5}>
-                    {this.renderTable()}
-                </Grid>
-                <Grid item xs={12} md={7}>
-                    {this.renderPieChart()}
                 </Grid>
                 <Grid item xs={12} sm={6} md={5}>
                     {this.renderHorizontalChart()}

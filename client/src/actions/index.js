@@ -18,9 +18,12 @@ export const getCurrentStreamState = () => async dispatch => {
 	dispatch({ type: GET_CURRENT_STREAM_STATE, payload: res.data });
 }
 
-export const getSongListForStation = station => async dispatch => {
-	const res = await axios.get(`/api/stations/${station}`);
-	dispatch({ type: GET_SONG_LIST_FOR_STATION, payload: res.data });
+export const getSongListForStation = data => async dispatch => {
+	const { station, start, end } = data;
+	const res = await axios.get(`/api/${station}/${start}/${end}`);
+
+	console.log(res.data)
+	dispatch({ type: GET_SONG_LIST_FOR_STATION, payload: res.data[0] });
 }
 
 export const setActiveStation = station => async dispatch => {

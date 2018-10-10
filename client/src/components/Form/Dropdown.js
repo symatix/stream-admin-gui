@@ -24,7 +24,6 @@ class Dropdown extends Component {
       this.setState({
          [name]: event.target.value,
       });
-      this.props.triggerChange()
       this.props.action(event.target.value);
    };
 
