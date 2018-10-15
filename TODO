@@ -1,0 +1,4 @@
+error catch on - no station selected (function that returns an empty object instead of rejected promise)
+starOf('day') endOf('day) on moment() function when selecting same date (set range to single day)
+
+REFACTORING activeStation reducer to - activePlaylist

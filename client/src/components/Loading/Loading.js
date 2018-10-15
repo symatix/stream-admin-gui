@@ -10,7 +10,7 @@ const style = {
         marginTop:"200px",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        zIndex: 10000
+        zIndex: 10
     }
 }
 

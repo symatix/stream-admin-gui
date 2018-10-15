@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import moment from 'moment';
 import Loading from '../Loading/Loading';
+import Notice from '../Notice/Notice';
 import Dropdown from '../Form/Dropdown';
 import Table from '../Table/Table';
 import DateTime from '../Form/DateTime';
@@ -41,6 +42,7 @@ class SongList extends Component {
 
     this.state = { 
       loading: false,
+      alert: false,
       station: null,
       startDate: Date.parse(startDate),
       endDate: Date.parse(endDate)
@@ -71,7 +73,9 @@ class SongList extends Component {
    }
    submitQuery(){
      const { station, startDate, endDate } = this.state;
-     console.log(this.state)
+     if(!station){
+       return this.setState({alert: true})
+     }
      const data = {
       station,
       start: startDate,
@@ -126,6 +130,7 @@ class SongList extends Component {
       <Grid container justify="center" spacing={24}>
         <Grid item xs={12}>
           {this.renderSelect()}
+        <Notice />
         </Grid>
         <Grid item xs={12} sm={10}>
           {this.renderSongList(song_list)}
